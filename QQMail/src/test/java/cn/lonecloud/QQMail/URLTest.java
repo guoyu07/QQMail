@@ -6,6 +6,7 @@ import java.util.Map;
 import org.junit.Test;
 
 import cn.lonecloud.util.HttpRequest;
+import cn.lonecloud.util.MailUtil;
 
 public class URLTest {
 
@@ -20,5 +21,9 @@ public class URLTest {
 	public void postTest(){
 		String sendPost = HttpRequest.sendPost("http://www.baidu.com", params);
 		System.out.println(sendPost);
+	}
+	@Test
+	public void getTokenKey(){
+		MailUtil.getTokenKey();
 	}
 }

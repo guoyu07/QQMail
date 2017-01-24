@@ -1,4 +1,8 @@
 package cn.lonecloud.util;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * QQ企业邮箱
  * @Title: MailUtil.java
@@ -9,9 +13,14 @@ package cn.lonecloud.util;
  */
 public class MailUtil {
 	
+	private static MailCfg cfg=MailCfg.getInstance();
+	
 	
 	public static String getTokenKey(){
-//		HttpRequest.sendGet(url, params)
+		String url=cfg.getMailURL()+"gettoken";
+		Map<String, String> params=new HashMap<String, String>();
+		String json = HttpRequest.sendGet(url, params);
+		System.out.println(json);
 		return null;
 	}
 }
