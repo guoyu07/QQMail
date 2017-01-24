@@ -1,0 +1,6 @@
+2017-01-24 15:46:06,777 - {"errcode":0,"errmsg":"ok","access_token":"vap_Fzix0gpT7ClbVBT7mCo-9MPiQA389MkQ3miiyA9Nj49qgTRloucsWg6Pwv7y","expires_in":7200}
+2017-01-24 15:50:20,115 - {"errcode":0,"errmsg":"ok","access_token":"vap_Fzix0gpT7ClbVBT7mCo-9MPiQA389MkQ3miiyA9Nj49qgTRloucsWg6Pwv7y","expires_in":7200}
+2017-01-24 16:11:22,069 - {"errcode":0,"errmsg":"ok","access_token":"vap_Fzix0gpT7ClbVBT7mCo-9MPiQA389MkQ3miiyA9Nj49qgTRloucsWg6Pwv7y","expires_in":7200}
+2017-01-24 16:11:22,322 - Department [id=6764451567449456812, name=我的企业, parentid=0, order=0]
+2017-01-24 16:13:19,134 - {"errcode":0,"errmsg":"ok","access_token":"vap_Fzix0gpT7ClbVBT7mCo-9MPiQA389MkQ3miiyA9Nj49qgTRloucsWg6Pwv7y","expires_in":7200}
+2017-01-24 16:13:19,465 - Department [id=6764451567449456812, name=我的企业, parentid=0, order=0]

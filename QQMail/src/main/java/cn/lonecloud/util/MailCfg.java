@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class MailCfg {
 	
-	private final static String RESOURCENAME="mail.properties";
+	private final static String RESOURCENAME="/mail.properties";
 	
 	private MailCfg() {
 		InputStream is=this.getClass().getResourceAsStream(RESOURCENAME);
@@ -22,6 +22,9 @@ public class MailCfg {
 		Properties properties=new Properties();
 		try {
 			properties.load(is);
+			mailURL=properties.getProperty("mailURL");
+			corpId=properties.getProperty("corpId");
+			contactsSecret=properties.getProperty("contactsSecret");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

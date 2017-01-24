@@ -1,4 +1,4 @@
-package cn.lonecloud.QQMail;
+package cn.lonecloud.test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,5 +25,9 @@ public class URLTest {
 	@Test
 	public void getTokenKey(){
 		MailUtil.getTokenKey();
+	}
+	@Test
+	public void getDepartment(){
+		MailUtil.getDepartment("1");
 	}
 }
