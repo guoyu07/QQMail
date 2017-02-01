@@ -14,6 +14,7 @@ public class MailCfg {
 	private MailCfg() {
 		setProperty(RESOURCENAME);
 	}
+
 	private final static MailCfg MAIL_CFG = new MailCfg();
 	/**
 	 * 邮箱请求地址
@@ -55,9 +56,11 @@ public class MailCfg {
 	public static MailCfg getInstance() {
 		return MAIL_CFG;
 	}
+
 	/**
 	 * 设置配置信息
-	 * @Description: 
+	 * 
+	 * @Description:
 	 * @param path
 	 */
 	private void setProperty(String path) {
