@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import cn.lonecloud.cfg.Constants.ExceptionConstants;
 import cn.lonecloud.exception.MailException;
 
 public class MailCfg {
@@ -62,7 +63,7 @@ public class MailCfg {
 	private void setProperty(String path) {
 		InputStream is = this.getClass().getResourceAsStream(path);
 		if (is == null) {
-			throw new MailException("没有找到资源文件！");
+			throw new MailException(ExceptionConstants.SOURCENOTFOUND);
 		}
 		Properties properties = new Properties();
 		try {
@@ -73,7 +74,7 @@ public class MailCfg {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			throw new MailException("载入文件错误！");
+			throw new MailException(ExceptionConstants.LOADFILEERR);
 		}
 	}
 }
