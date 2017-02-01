@@ -1,36 +1,19 @@
 package cn.lonecloud.util;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import cn.lonecloud.exception.MailException;
+
 public class MailCfg {
-	
-	private final static String RESOURCENAME="/mail.properties";
-	
+
+	private final static String RESOURCENAME = "/mail.properties";
+
 	private MailCfg() {
-		InputStream is=this.getClass().getResourceAsStream(RESOURCENAME);
-		if (is==null) {
-			try {
-				throw new FileNotFoundException("没有找到资源文件");
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		Properties properties=new Properties();
-		try {
-			properties.load(is);
-			mailURL=properties.getProperty("mailURL");
-			corpId=properties.getProperty("corpId");
-			contactsSecret=properties.getProperty("contactsSecret");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		setProperty(RESOURCENAME);
 	}
-	private final static MailCfg MAIL_CFG=new MailCfg();
+	private final static MailCfg MAIL_CFG = new MailCfg();
 	/**
 	 * 邮箱请求地址
 	 */
@@ -67,8 +50,30 @@ public class MailCfg {
 	public void setContactsSecret(String contactsSecret) {
 		this.contactsSecret = contactsSecret;
 	}
-	
-	public static MailCfg getInstance(){
+
+	public static MailCfg getInstance() {
 		return MAIL_CFG;
+	}
+	/**
+	 * 设置配置信息
+	 * @Description: 
+	 * @param path
+	 */
+	private void setProperty(String path) {
+		InputStream is = this.getClass().getResourceAsStream(path);
+		if (is == null) {
+			throw new MailException("没有找到资源文件！");
+		}
+		Properties properties = new Properties();
+		try {
+			properties.load(is);
+			mailURL = properties.getProperty("mailURL");
+			corpId = properties.getProperty("corpId");
+			contactsSecret = properties.getProperty("contactsSecret");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new MailException("载入文件错误！");
+		}
 	}
 }
