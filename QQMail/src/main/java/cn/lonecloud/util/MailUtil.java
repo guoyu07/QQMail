@@ -7,6 +7,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import cn.lonecloud.MailException;
 import cn.lonecloud.model.Department;
 
 import com.alibaba.fastjson.JSON;
@@ -41,6 +42,9 @@ public class MailUtil {
 		}
 		Map map=JSON.parseObject(json);
 		Object token = map.get("access_token");
+		if (token==null) {
+			throw new MailException("access_token is not found");
+		}
 		return token.toString();
 	}
 	/**
