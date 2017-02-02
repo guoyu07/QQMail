@@ -90,7 +90,24 @@ public class MailUtil {
 	 */
 	public static void updateDepartment(Department department) {
 		if (department == null) {
-			throw new MailException("");
+			throw new MailException(ExceptionConstants.DEPARTMENTNULLERR);
+		}
+		if (department.getId()==null) {
+			throw new MailException(ExceptionConstants.DEPARTMENTIDNULLERR);
+		}
+		String tokenKey = getTokenKey();
+		Map<String, String> params = new HashMap<>();
+		if (tokenKey != null) {
+			String url = cfg.getMailURL() + "deparment/update?access_token"
+					+ tokenKey;
+			String json = HttpRequest.sendPost(url, params);
+
+			if (json.contains("ok")) {
+				json = json.substring(json.indexOf("["), json.indexOf("]") + 1);
+			}
+			List<Department> departments = JSON.parseArray(json,
+					Department.class);
 		}
 	}
+
 }

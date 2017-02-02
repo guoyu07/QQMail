@@ -130,7 +130,12 @@ public class HttpRequest {
 		}
 		return result;
 	}
-
+	/**
+	 * 还原参数
+	 * @Description: 
+	 * @param params
+	 * @return
+	 */
 	private static String getParamStr(Map<String, String> params) {
 		if (params!=null) {
 			Set<String> keys = params.keySet();

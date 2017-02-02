@@ -9,5 +9,7 @@ public interface Constants {
 		static final String ACCESSERR = "access_token is not found";
 		static final String SOURCENOTFOUND = "没有找到资源文件！";
 		static final String LOADFILEERR = "载入文件错误！";
+		static final String DEPARTMENTNULLERR = "not found department";
+		static final String DEPARTMENTIDNULLERR = "department Id is null";
 	}
 }
